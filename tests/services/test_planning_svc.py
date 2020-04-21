@@ -11,7 +11,7 @@ def setup_planning_test(loop, ability, agent, operation, data_svc):
                        cleanup=BaseWorld.encode_string('rm -rf test'), variations=[])
     tagent = agent(sleep_min=1, sleep_max=2, watchdog=0)
     toperation = operation(name='test1', agents=tagent, adversary=Adversary(name='test', description='test',
-                                                                           atomic_ordering=[], adversary_id='XYZ'))
+                                                                            atomic_ordering=[], adversary_id='XYZ'))
     loop.run_until_complete(data_svc.store(tability))
     yield (tability, tagent, toperation)
 
